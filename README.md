@@ -1,3 +1,7 @@
+# Requiremenst
+
+Unbuntu 20 x86_64/aarc64
+
 # Prepare
 
 1. clone repository
@@ -7,6 +11,15 @@ sudo apt install linux-headers-generic build-essential
 ```
 
 # Build
+
+1. make
+```shell
+make
+```
+2. make clean
+```shell
+make clean
+```
 
 # Install
 
