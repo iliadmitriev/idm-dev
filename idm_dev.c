@@ -29,7 +29,7 @@ static int __init idm_dev_init(void) {
 		return major;
 	}
 	
-	printk(KERN_INFO "IDM device module loaded\n");
+	printk(KERN_INFO "IDM device module loaded: %d\n", major);
 	return 0;
 }
 
