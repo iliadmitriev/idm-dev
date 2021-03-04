@@ -59,7 +59,7 @@ static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *of
 	return errors == 0 ? message_len : -EFAULT;
 }
 
-struct ssize_t dev_write(struct file *filep, const char *buffer, size_t len, loff_t *offset) {
+static ssize_t dev_write(struct file *filep, const char *buffer, size_t len, loff_t *offset) {
 	printk(KERN_INFO "IDM is a readonly device");
 	return -EFAULT;
 
