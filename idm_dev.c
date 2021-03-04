@@ -39,17 +39,17 @@ static void __exit idm_dev_exit(void) {
 	printk(KERN_INFO "IDM device module unloaded\n");
 }
 
-static int dev_open(struct inode*, struct file*) {
+static int dev_open(struct inode *inodep, struct file *filep) {
 	printk(KERN_INFO "IDM device opened");
 	return 0;
 }
 
-static int dev_release(struct inode*, struct file*) {
+static int dev_release(struct inode* inodep, struct file *filep) {
 	printk(KERN_INFO "IDM device closed (released)");
 	return 0;
 }
 
-static ssize_t dev_read(struct file*, char*, size_t, loff_t*) {
+static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *offset) {
 	int errors  = 0;
 	char *message = "IDM static read message";
 	int message_len = strlen(message);
@@ -59,7 +59,7 @@ static ssize_t dev_read(struct file*, char*, size_t, loff_t*) {
 	return errors == 0 ? message_len : -EFAULT;
 }
 
-struct ssize_t dev_write(struct file*, const char*, site_t, loff_t*) {
+struct ssize_t dev_write(struct file *filep, char *buffer, size_t len, loff_t *offset) {
 	printk(KERN_INFO "IDM is a readonly device");
 	return -EFAULT;
 
