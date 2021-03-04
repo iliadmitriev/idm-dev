@@ -9,7 +9,7 @@
 static int dev_open(struct inode*, struct file*);
 static int dev_release(struct inode*, struct file*);
 static ssize_t dev_read(struct file*, char*, size_t, loff_t*);
-struct ssize_t dev_write(struct file*, const char*, site_t, loff_t*);
+struct ssize_t dev_write(struct file*, const char*, size_t, loff_t*);
 
 
 static struct file_operations fops={
@@ -56,7 +56,7 @@ static ssize_t dev_read(struct file*, char*, size_t, loff_t*) {
 	
 	errors = copy_to_user(buffer, message, message_len);
 	
-	return errors == ? message_len : -EFAULT;
+	return errors == 0 ? message_len : -EFAULT;
 }
 
 struct ssize_t dev_write(struct file*, const char*, site_t, loff_t*) {
