@@ -50,7 +50,13 @@ static int dev_release(struct inode*, struct file*) {
 }
 
 static ssize_t dev_read(struct file*, char*, size_t, loff_t*) {
-
+	int errors  = 0;
+	char *message = "IDM static read message";
+	int message_len = strlen(message);
+	
+	errors = copy_to_user(buffer, message, message_len);
+	
+	return errors == ? message_len : -EFAULT;
 }
 
 struct ssize_t dev_write(struct file*, const char*, site_t, loff_t*) {
