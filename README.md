@@ -1,6 +1,6 @@
 # Requiremenst
 
-Unbuntu 20 x86_64/aarc64
+Unbuntu 20 x86_64/aarch64
 
 # Prepare
 
