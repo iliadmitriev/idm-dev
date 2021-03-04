@@ -29,13 +29,16 @@ make clean
 ```shell
 sudo insmod idm_dev.ko 
 ```
-
 2. log module messages
 ```shell
 tail -f /var/log/kern.log
 ```
-
-3. unload module
+3. make dev node
+```shell
+sudo mknod /dev/idmdev c 234 0
+```
+> 234 - is a device major number from log message
+4. unload module
 ```shell
 sudo rmmod idm_dev
 ```
