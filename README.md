@@ -1,4 +1,4 @@
-# Requiremenst
+# Requirements
 
 Unbuntu 20 x86_64/aarch64
 
