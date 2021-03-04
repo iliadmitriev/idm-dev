@@ -1,0 +1,11 @@
+/.idm_dev.ko.cmd
+/.idm_dev.mod.cmd
+/.idm_dev.mod.o.cmd
+/.idm_dev.o.cmd
+/Module.symvers
+/idm_dev.ko
+/idm_dev.mod
+/idm_dev.mod.c
+/idm_dev.mod.o
+/idm_dev.o
+/modules.order
