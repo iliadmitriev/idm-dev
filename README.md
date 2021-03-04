@@ -21,10 +21,9 @@ make
 make clean
 ```
 
-# Install
-
 # Usage
 
+## Run
 1. insert module to kernel
 ```shell
 sudo insmod idm_dev.ko 
@@ -38,7 +37,18 @@ tail -f /var/log/kern.log
 sudo mknod /dev/idmdev c 234 0
 ```
 > 234 - is a device major number from log message
-4. unload module
+4. cat 
+```shell
+cat /dev/idmdev
+```
+
+## Cleanup
+
+1. delete node
+```shell
+sudo rm /dev/idmdev
+```
+2. unload module
 ```shell
 sudo rmmod idm_dev
 ```
