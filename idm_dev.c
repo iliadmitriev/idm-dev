@@ -39,6 +39,25 @@ static void __exit idm_dev_exit(void) {
 	printk(KERN_INFO "IDM device module unloaded\n");
 }
 
+static int dev_open(struct inode*, struct file*) {
+	printk(KERN_INFO "IDM device opened");
+	return 0;
+}
+
+static int dev_release(struct inode*, struct file*) {
+	printk(KERN_INFO "IDM device closed (released)");
+	return 0;
+}
+
+static ssize_t dev_read(struct file*, char*, size_t, loff_t*) {
+
+}
+
+struct ssize_t dev_write(struct file*, const char*, site_t, loff_t*) {
+	printk(KERN_INFO "IDM is a readonly device");
+	return -EFAULT;
+
+}
 
 module_init(idm_dev_init)
 module_exit(idm_dev_exit)
