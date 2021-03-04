@@ -12,11 +12,11 @@ sudo apt install linux-headers-generic build-essential
 
 # Build
 
-1. make
+1. building
 ```shell
 make
 ```
-2. make clean
+2. cleanup
 ```shell
 make clean
 ```
