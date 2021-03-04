@@ -27,7 +27,7 @@ make clean
 
 1. insert module to kernel
 ```shell
-sudo insmod idm-dev.ko 
+sudo insmod idm_dev.ko 
 ```
 
 2. log module messages
